@@ -9,7 +9,8 @@ function InputCertificado(){
     function onChangeCpf(e){
       setCpf(e.target.value);
     }
-    function handleClick(){
+    function handleSubmit(){
+      console.log(cpf);
       setLoading(l => !l);
     }
     
@@ -25,7 +26,7 @@ function InputCertificado(){
         <S.Buton
           // disabled={loading}
           type="submit"
-          onClick={handleClick}
+          onClick={handleSubmit}
         >
             <S.Spinner>
               {loading && (

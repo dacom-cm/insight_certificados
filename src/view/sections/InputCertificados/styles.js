@@ -8,8 +8,10 @@ export const Wrapper = styled.div`
 ` 
 
 export const Input = styled(ReactInputMask)`
+
   all: unset;
-  background-color: #fff;
+  background-color:${props =>props.disabled?'#ddd':'#fff'} ;
+  color:${props =>props.disabled?'#606060':'#000'};
 
   width: 100%;
   padding: 0.5em;
