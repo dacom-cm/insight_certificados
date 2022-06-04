@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { teste } from '../../../Domains/Certificados';
 import * as S from './styles'
 
 
@@ -9,9 +10,18 @@ function InputCertificado(){
     function onChangeCpf(e){
       setCpf(e.target.value);
     }
-    function handleSubmit(){
+    async function handleSubmit(){
+      setLoading(true);
       console.log(cpf);
-      setLoading(l => !l);
+
+      try {
+        await teste();
+        
+      } catch (ex) {
+        console.log('AQUI', ex);
+      }
+
+      setLoading(false);
     }
     
     return (
