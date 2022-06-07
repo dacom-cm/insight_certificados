@@ -14,20 +14,31 @@ a {
   cursor: pointer;
 }
 
-.home {
+.certificados{
   min-height: 100vh;
   min-width: 100vw;
-  background-color: #222;
+  background-image: linear-gradient(45deg,  #ff821b 10%, #3fb2a1 90%);
+  /* background-image: url("/public/img/bg2.png"), linear-gradient(45deg, #ffae00, #00a3a8);
+  background-blend-mode: overlay; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-between;
 }
 
 .home .conteudo {
   border: 1px solid #555;
   width: fit-content;
   height: fit-content;
-  padding: 2%;
-  margin: 5%;
+  padding: 20px;
+  margin: 10vh 5vw;
   border-radius: 10px;
   background-color: #333;
   display: grid;
@@ -39,9 +50,9 @@ a {
 .home .img-logo{
   margin-right: auto;
   margin-left: auto;
-  height: 20vh;
-  min-height: 100px;
   width: fit-content;
+  max-width: 80vw;
+  max-height: 25vh;
 }
 
 .home .socialmedia{
@@ -52,14 +63,14 @@ a {
 }
 
 .home .socialmedia p{
-  color: #111;
+  color: #f0f0f0;
   font-size: 2.5rem;
   font-family: "fontello";
   margin: 0 5px;
 }
 
 .home .socialmedia p:hover{
-  background-image: linear-gradient(45deg, #ffae00, #00a3a8);
+  background-image: linear-gradient(45deg, #ff821b 20%, #3fb2a1 80%);
   background-size: 100%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -69,8 +80,15 @@ a {
 .home h1{
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;
-  background-image: linear-gradient(45deg, #ffae00, #00a3a8);
+  color: #fff;
+  /* background-image: linear-gradient(45deg, #ff821b 20%, #3fb2a1 80%);
   background-size: 100%;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+}
+
+.attributions{
+  color: #fff;
+  font-size: .75em;
+  margin-bottom: 10px;
 }
