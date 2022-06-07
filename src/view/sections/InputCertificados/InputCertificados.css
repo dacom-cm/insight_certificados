@@ -34,3 +34,22 @@
     box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px, rgba(0, 0, 0, 0.12) 0px 1px 2px;
     color: #111;
 }
+
+
+@media (max-width: 500px) {
+    .InputCertificados form button{
+        font-size: 0.9em;
+    }
+    .InputCertificados form button:hover{
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 300px) {
+    .InputCertificados form button{
+        font-size: .75em;
+    }
+    .InputCertificados form button:hover{
+        font-size: .65em;
+    }
+}

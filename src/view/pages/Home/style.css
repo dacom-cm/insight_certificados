@@ -53,6 +53,7 @@ a {
   width: fit-content;
   max-width: 80vw;
   max-height: 25vh;
+  min-height: 100px;
 }
 
 .home .socialmedia{
@@ -91,4 +92,26 @@ a {
   color: #fff;
   font-size: .75em;
   margin-bottom: 10px;
+}
+
+.attributions a:hover{
+  color: #000; 
+}
+
+@media (max-width: 500px) {
+  .home .socialmedia p{
+    font-size: 2rem;
+  }
+  .home h1{
+    font-size: 1.75em;
+  }
+}
+
+@media (max-width: 300px) {
+  .home .socialmedia p{
+    font-size: 1.75rem;
+  }
+  .home h1{
+    font-size: 1.5em;
+  }
 }
