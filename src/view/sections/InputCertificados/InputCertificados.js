@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { teste } from '../../../Domains/Certificados';
+import { request } from '../../../Domains/Certificados';
 import * as S from './styles'
 
 
@@ -15,7 +15,7 @@ function InputCertificado(){
       console.log(cpf);
 
       try {
-        await teste();
+        await request();
         
       } catch (ex) {
         console.log('AQUI', ex);
