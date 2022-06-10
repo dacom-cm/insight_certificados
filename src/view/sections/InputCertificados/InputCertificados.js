@@ -1,37 +1,53 @@
 import React, {useState} from 'react';
-import './InputCertificados.css';
+import { request } from '../../../Domains/Certificados';
+import * as S from './styles'
 
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+function InputCertificado(){
+    const [cpf,setCpf] = useState();
+    const [loading,setLoading] = useState(false);
+    
+    function onChangeCpf(e){
+      setCpf(e.target.value);
+    }
+    async function handleSubmit(){
+      setLoading(true);
+      console.log(cpf);
 
-  //handle form values
-  const [ formValues, setFormValues ] = useState({});
-  const handleInputChange = (e) =>{
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
+      try {
+        await request();
+        
+      } catch (ex) {
+        console.log('AQUI', ex);
+      }
 
-  //botão submit
-  const handleSubmit = (e) => {
-    e.preventDefault();//impedir o default
-    console.log('enviar cpf', formValues);
-  }
-
-  //formatar o cpf
-  const formatCpf = (cpf) => {
-      return cpf;
-  }
-
-
+      setLoading(false);
+    }
+    
     return (
-        <div className='InputCertificados'>
-            
-            {/* formulario do cpf */}
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="cpf" onChange={handleInputChange} value={formatCpf(formValues.cpf) || ''} placeholder="Digite o seu CPF" maxLength="11" required/>
-                <button type="submit">BUSCAR</button>
-            </form>
-        </div>
+      <S.Wrapper className='InputCertificados'>    
+         <S.Input 
+         disabled={loading}
+         mask="999.999.999-99"
+          value={cpf}
+          onChange={onChangeCpf}
+          placeholder="Digite o seu CPF"
+        />
+        <S.Buton
+          // disabled={loading}
+          type="submit"
+          onClick={handleSubmit}
+        >
+            <S.Spinner>
+              {loading && (
+                <S.SpinnerImg src="/img/spinner.svg" alt="loading..."/>
+              )}
+            </S.Spinner>
+
+          BUSCAR
+        </S.Buton>
+      </S.Wrapper>
     );
 }
+
+export default InputCertificado;
