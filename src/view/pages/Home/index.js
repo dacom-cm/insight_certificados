@@ -15,7 +15,7 @@ export default () => {
           <div className='socialmedia'>
             <a href='#' target='_blank'><p id="whatsapp">w</p></a>
             <a href='#' target='_blank'><p id="instagram">i</p></a>
-            <a href='#' target='_blank'><p id="email" style={{marginTop: '-.1rem'}}>c</p></a>
+            <a href='#' target='_blank'><p id="email" style={{marginTop: '-.05rem'}}>c</p></a>
             <a href='#' target='_blank'><p id="facebook">g</p></a>
             <a href='#' target='_blank'><p id="linkedin">l</p></a>
           </div>
@@ -24,7 +24,7 @@ export default () => {
         </div>
       </div>
       
-      <p class='attributions'>Desenvolvido com ❤️ por <a href='https://www.haken.com.br' target='_blank'>Haken UTFPR</a></p>
+      <p className='attributions'>Desenvolvido com ❤️ por <a href='https://www.haken.com.br' target='_blank'>Haken UTFPR</a></p>
     </div>
   );
 }

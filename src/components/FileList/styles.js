@@ -3,26 +3,44 @@ import styled from "styled-components";
 export const List = styled.div`
   display:flex;
   flex-direction:column;  
+  gap: 8px;
 `
 
-export const File = styled.div`
+export const File = styled.a`
   border-radius:5px;
   padding: 8px;
-  margin: 4px 0px;
-  background: #fff1;
+  background: #4f4f4f;
 
   display: flex;
   align-items:center;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: #e4e4e4;
+  transition: 200ms;
+
+  img {
+    filter: invert(80%);
+    transition: 200ms;
+  }
+
+  &:hover{
+    background: #eee;
+    color: #444;
+    img {
+      filter: invert(20%);
+    }
+  }
 `
 
 export const FileName = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-spacing: 0.9em;
 `
 
 export const FileDownload = styled.a`
-  margin-left: auto;
   padding: 5px;
   margin-top:4px;
   
@@ -30,12 +48,12 @@ export const FileDownload = styled.a`
 
 export const FileDownloadIcon = styled.img`
   width: 20px;
-  transition: 200ms;
-  &:hover{
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-  }
 `
 
 export const FileThumb = styled.p`
+`
+
+export const Title = styled.h5`
+  color: #ccc;
+
 `

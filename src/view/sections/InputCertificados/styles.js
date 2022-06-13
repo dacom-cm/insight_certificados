@@ -11,7 +11,7 @@ export const Input = styled(ReactInputMask)`
 
   all: unset;
   background-color:${props =>props.disabled?'#ddd':'#fff'} ;
-  color:${props =>props.disabled?'#ddd':'#000'};
+  color:${props =>props.disabled?'#ddd':'#333'};
 
   width: 100%;
   padding: 0.5em;
@@ -19,21 +19,35 @@ export const Input = styled(ReactInputMask)`
 `
 
 
-export const Buton= styled.button`
-  display: flex;
-  align-items:center;
-  color:#fff;
-
-  border: none;
-  border-radius: 0 5px 5px 0;
-  background: #111;
-  text-align: center;
+export const Button = styled.button`
+  height: 36px;
+  width: 100%;
   cursor: pointer;
-
+  background: #111;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  
+  color: #fff;
+  text-align: center;
   font-size: 1em;
+
   transition: 200ms;
 
-  height:36px;
+  @media (max-width: 500px) {
+    font-size: 0.9em;
+    
+    &:hover{
+      font-size: .8em;
+    }
+  }
+
+  @media (max-width: 300px) {
+    font-size: .75em;
+    
+    &:hover{
+      font-size: .65em;
+    }
+  }
 
   ${({disabled})=> disabled ? css`
     color: #444;
@@ -64,9 +78,10 @@ const rotate = keyframes`
   }
 `
 export const Spinner = styled.div`
+  margin: 0 auto;
   width: 12px;
-  margin-right:5px;
-  margin-left:6px;
   animation: ${rotate} 0.8s linear infinite;
 `
-export const SpinnerImg = styled.img``
+export const SpinnerImg = styled.img`
+  filter: invert(80%);
+`
