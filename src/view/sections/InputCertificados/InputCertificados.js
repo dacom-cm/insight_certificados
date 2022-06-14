@@ -28,18 +28,17 @@ function InputCertificado(){
     }
 
     async function handleSubmit(token){
-      // console.log('token', token);
       setLoading(true);
       try {
         const files = await request(cpf, token);
-        // console.log('teste')
-        // console.log({files});
+
         const filesToList = files.map(f => ({
           name: f.name,
           link: f.webViewLink,
           downloadLink: f.webContentLink,
           thumb: f.thumbnailLink
-        }))
+        }));
+
         setFiles(filesToList)       
       } catch (ex) {
         console.log({ex});

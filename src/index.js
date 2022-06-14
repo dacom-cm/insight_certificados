@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 //zerar css
@@ -11,7 +11,10 @@ import ScrollToTop from './utils/ScrollToTop';
 //pages
 import Home from './view/pages/Home';
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop>
@@ -21,6 +24,5 @@ ReactDOM.render(
         </Routes>
       </ScrollToTop>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
