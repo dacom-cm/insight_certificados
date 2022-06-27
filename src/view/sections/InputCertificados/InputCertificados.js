@@ -58,9 +58,11 @@ function InputCertificado(){
       }
     });
 
-    // window.loadCaptcha = () => {
-    //   console.log('xd');
-    // }
+    function handleOnKeyUp(event){
+      if(event?.key === 'Enter' && isSearchAllowed){
+        handleSubmit();
+      }
+    }
 
     
     return (
@@ -80,6 +82,7 @@ function InputCertificado(){
           value={cpf}
           onChange={onChangeCpf}
           placeholder="Digite o seu CPF"
+          onKeyUp={handleOnKeyUp}
         />
         <div id="recaptcha">
           <S.Button
